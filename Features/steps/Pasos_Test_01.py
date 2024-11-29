@@ -15,11 +15,14 @@ def step_impl(context):
     f=FuncionesGlobales(context.driver)
     context.driver.get("https://www.facebook.com/")
     context.driver.maximize_window()
-    f.Tiempo(5)
+    f.Tiempo(2)
 
 
 
 
-@then(u'Visualizare la pagina principal')
+@then(u'Coloco mis datos e ingreso')
 def step_impl(context):
-    print(u'STEP: Then Visualizare la pagina principal')
+    global driver, f
+    f = FuncionesGlobales(context.driver)
+    f.Datos()
+    f.Tiempo(5)
